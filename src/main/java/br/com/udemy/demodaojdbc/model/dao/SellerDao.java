@@ -1,5 +1,6 @@
 package br.com.udemy.demodaojdbc.model.dao;
 
+import br.com.udemy.demodaojdbc.model.entities.Department;
 import br.com.udemy.demodaojdbc.model.entities.Seller;
 
 import java.util.List;
@@ -16,5 +17,6 @@ public interface SellerDao {
 
     List<Seller> findAll();
 
+    List<Seller> findByDepartment(Department department);
 
 }
