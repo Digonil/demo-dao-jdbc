@@ -5,15 +5,17 @@ import br.com.udemy.demodaojdbc.model.dao.SellerDao;
 import br.com.udemy.demodaojdbc.model.entities.Department;
 import br.com.udemy.demodaojdbc.model.entities.Seller;
 
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class Program {
 
-    public static void main(String[] args) {
-        Department obj = new Department(1, "Books");
-        Seller seller = new Seller(21, "Bob", "bob@gmail.com", LocalDate.now(), 3000.0, obj);
+    public static void main(String[] args) throws SQLException, FileNotFoundException {
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
+
+        Seller seller = sellerDao.findById(3);
         System.out.println(seller);
     }
 
