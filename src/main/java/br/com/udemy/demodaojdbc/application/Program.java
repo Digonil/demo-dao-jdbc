@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 
 public class Program {
 
@@ -32,6 +33,12 @@ public class Program {
         for (Seller obj : list) {
             System.out.println(obj);
         }
+
+        System.out.println("=== TEST 4: seller insert ===");
+
+        Seller newSeller = new Seller(null, "Greg", "greg@mail.com", LocalDate.now(), 4000.0, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id = " + newSeller.getId());
 
         System.out.println(seller);
     }
